@@ -16,7 +16,7 @@ class BookController extends Controller
     public function index()
     {
         // Get books
-        $books = Book::paginate(15);
+        $books = Book::paginate(10);
 
         // Return collection of articles as a resource
         return BookResource::collection($books);
@@ -29,8 +29,11 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        // Check request method
         $book = $request->isMethod('put') ? Book::findOrFail($request->book_id) : new Book;
+
+        // Store values of the book
         $book->id = $request->input('book_id');
         $book->title = $request->input('title');
         $book->description = $request->input('description');
