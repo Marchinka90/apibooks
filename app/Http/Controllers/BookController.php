@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+Use App\Http\Requests;
+use App\Book;
+Use App\Http\Resources\Book as BookResource;
 class BookController extends Controller
 {
     /**
@@ -13,7 +15,11 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        // Get books
+        $books = Book::paginate(10);
+
+        // Return collection of articles as a resource
+        return BookResource::collection($books);
     }
 
     /**
@@ -24,7 +30,8 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Get single book
+
     }
 
     /**
