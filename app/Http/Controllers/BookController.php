@@ -30,7 +30,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        // Get single book
+        //
 
     }
 
@@ -42,7 +42,11 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        // Get single book
+        $book = Book::findOrFail($id);
+
+        //Return single book as e resource
+        return new BookResource($book);
     }
 
     /**
