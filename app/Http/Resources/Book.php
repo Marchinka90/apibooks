@@ -22,7 +22,6 @@ class Book extends JsonResource
             'description'   => $this->description,
             'genre'         => $this->genre,
             'author'        => $this->author
-
         ];
     }
 }

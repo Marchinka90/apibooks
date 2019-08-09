@@ -27,7 +27,7 @@ Route::get('book/{id}', 'BookController@show');
 Route::post('book', 'BookController@store');
 
 // Update book
-Route::put('books', 'BookController@store');
+Route::put('book', 'BookController@store');
 
 // Delete book
-Route::delete('books', 'BookController@destroy');
+Route::delete('book/{id}', 'BookController@destroy');
