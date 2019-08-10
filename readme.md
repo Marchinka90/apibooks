@@ -2,8 +2,6 @@
 
 > ### Example Laravel codebase containing a REST API whit BASIC CRUD.
 
-This repo is functionality complete
-
 ----------
 
 # Getting started
@@ -63,27 +61,44 @@ Run the database seeder
 
 The api can be accessed at
 
-    http://localhost/apibooks/public
+    http://apibooks/public
 
 You can retrieve all books in the api using GET request at:
 
-		http://localhost/apibooks/public/api/books 
+		http://apibooks/public/api/books 
 
 You can retrieve a single book in the api using GET request and an ID. Here's an example:
 	
-		http://localhost/apibooks/public/api/book/3
+		http://apibooks/public/api/book/3
 
-You can create a single book in the api using POST request at:
+You can create a single book in the api using POST request and define book's attributes at:
 
-		http://localhost/apibooks/public/api/book.
+		http://apibooks/public/api/book.
 
-You can update a single book in the api using PUT request at:
+		Here's an example:
+		{
+				"title" : "Manuel Hodkiewicz",     
+				"description" : "Books are either fiction or non-fiction. Non-fiction books contain factual information...",     
+				"genre" : "Non-Fiction",
+				"author_id" : 3      
+		} 
 
-		http://localhost/apibooks/public/api/book.	
+You can update a single book in the api using PUT request, select witch book will be updated and define  it's new attributes at:
+
+		http://apibooks/public/api/book.
+
+		Here's an example:
+		{	
+				"book_id" = "1",
+				"title" : "Vladimir Lakin",     
+				"description" : "Fiction books are ones that have been made up...",     
+				"genre" : "Fiction",
+				"author_id" : 6      
+		} 	
 
 You can delete a single book in the api using DELETE request and an ID. Here's an example:
 
-		http://localhost/apibooks/public/api/book/3
+		http://apibooks/public/api/book/3
 
 
 
